@@ -24,6 +24,161 @@ Visual Studio Code is my main code editor for high-level programming. This is no
 * [Terraform](https://www.terraform.io) <br>
 Terraform is a way to codify, automate, provision and version cloud APIs into declarative configuration files. The main purpose of Terraform is to create IaC for provisioning amazing infrastructure to different clouds. <br>
 
+* [Packer](https://www.packer.io) <br>
+Packer allows us to create identical machine images for multiple platforms from a single source configuration. We will use it to create AWS AMIs to launch custom EC2 images. <br>
+
+## Important Terraform Remarks
+
+Some important notes to keep in mind for the usage of Terraform are:
+
+
+### Install Terraform Bin/Exe
+
+To install Terraform, please go to [Download Terraform](https://www.terraform.io/downloads) and install the specific version for your OS. Remember to add the specific path to the binary, so that Terraform CLI can be used correctly. <br>
+
+### Terraform Files
+
+Terraform files usually have the `.tf` extension and there is also the `.tf.json` convention for a JSON-based variant of the language. See extra details on [Terraform Files and Directories](https://www.terraform.io/language/files). <br>
+
+### Terraform State
+
+One of the most important files are the `terraform.tfstate` and `terraform.tfstate.backup`, which determine the state and they can be stored locally or remotely. These files contain the state of the infrastructure and configurations related to the IaC. They also maps real world resources to the configuration and keep track of extra relevant information. You can learn more about the state in [Terraform State](https://www.terraform.io/language/state)
+
+### Terraform Dependency Lock
+
+Another important file is the `.terraform.lock.hcl`, which is the [Dependency Lock File](https://www.terraform.io/language/files/dependency-lock) and it tracks the provider dependencies. <br>
+
+### Terraform Commands
+
+- Initialize Terraform directory and downloads providers: 
+    ```bash
+    terraform init
+    ```
+
+- Initialize Terraform directory and do not download providers: 
+    ```bash
+    terraform init --get-plugins=false
+    ```
+
+- Download and update root modules:
+    ```bash
+    terraform get
+    ```
+
+- Create an execution plan:
+    ```bash
+    terraform plan
+    ```
+
+- Create an execution plan only for a targeted resource:
+    ```bash
+    terraform plan -target="random_cool_resource.random_cool_resource_name"
+    ```
+
+- Create a destroy plan:
+    ```bash
+    terraform plan -destroy
+    ```
+
+- Execute (apply) changes in the real environment:
+    ```bash
+    terraform apply
+    ```
+
+- Execute (apply) changes in the real environment with specific variable file:
+    ```bash
+    terraform apply --var-file dev.tfvars.json
+    ```
+
+- Execute (apply) changes only for a targeted resource:
+    ```bash
+    terraform apply -target="random_cool_resource.random_cool_resource_name"
+    ```
+
+- Destroy all resources:
+    ```bash
+    terraform destroy
+    ```
+
+- Destroy only a targeted resource:
+    ```bash
+    terraform destroy -target="random_cool_resource.random_cool_resource_name"
+    ```
+
+- Refresh the state of Terraform state file with real environment:
+    ```bash
+    terraform refresh
+    ```
+
+- Terraform workspace commands:
+    ```bash
+    terraform workspace new
+    terraform workspace select
+    terraform workspace list
+    terraform workspace show
+    terraform workspace delete
+    ```
+
+- Format Terraform files into HCL canonical structure:
+    ```bash
+    terraform fmt
+    ```
+
+- Validate Terraform files:
+    ```bash
+    terraform validate
+    ```
+
+- Create graph of resources and its dependencies:
+    ```bash
+    terraform graph
+    ```
+
+- Enumerates all outputs from the root module:
+    ```bash
+    terraform output
+    ```
+
+- Enumerates an specific output from the root module:
+    ```bash
+    terraform output <specific_output>
+    ```
+
+- Terraform state commands:
+    ```bash
+    terraform state list
+    terraform state list aws_instance.my_cool_ec2
+    terraform state show aws_instance.my_cool_ec2
+    terraform state pull
+    terraform state push
+    terraform state mv
+    terraform state rm
+    ```
+
+## Important Packer Remarks
+
+Some important notes to keep in mind for the usage of Packer are:
+
+### Install Packer Bin/Exe
+
+To install Packer, please go to [Download Packer](https://www.packer.io/downloads) and install the specific version for your OS. Remember to add the specific path to the binary, so that Packer CLI can be used correctly. <br>
+
+### How the AMI is created
+
+When the AMI process is being executed, it usually creates an EC2 instance called `Packer Builder`. Keep this in mind if you want to do extra debugging related to the AMI creation on AWS. <br>
+
+### Packer Commands
+
+- Validate a JSON file that creates an AMI:
+    ```bash
+    packer validate cool-ubuntu-aws-ami.json
+    ```
+
+- Build the AMI with Packer and a JSON file:
+    ```bash
+    packer build cool-ubuntu-aws-ami.json
+    ```
+
 
 ## Usage :dizzy:
 All projects are really well commented and most of them have specifications and remarks for their purpose and I/O. <br>
