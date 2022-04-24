@@ -1,5 +1,7 @@
 #!/bin/bash
+set -x
 
+echo "----- INITIALIZING CUSTOM AMI CREATION -----"
 sudo apt-get update
 
 sudo apt-get -y install apt-transport-https ca-certificates curl gnupg software-properties-common

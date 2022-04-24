@@ -1,0 +1,37 @@
+{
+  "variables": {
+    "aws_account_id": "{{env `AWS_ACCOUNT_ID`}}",
+    "source_ami": "ami-04505e74c0741db8d",
+    "aws_instance_type": "t2.micro",
+    "owner_name": "Santiago Garcia Arango",
+    "ami_name": "packer-cool-ubuntu-aws-ami"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "us-east-1",
+      "source_ami": "{{user `source_ami`}}",
+      "source_ami_filter": {
+        "most_recent": true
+      },
+      "instance_type": "{{user `aws_instance_type`}}",
+      "ssh_username": "ubuntu",
+      "ami_name": "{{user `ami_name`}}-{{timestamp}}",
+      "ami_description": "My cool Ubuntu personalized AMI via Packer",
+      "tags": {
+        "Name": "{{user `ami_name`}}-{{timestamp}}",
+        "owner": "{{user `owner_name`}}"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "pause_before": "5s",
+      "expect_disconnect": false,
+      "script": "./scripts/install-docker.sh"
+    }
+  ]
+}
