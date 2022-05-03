@@ -132,6 +132,7 @@ Another important file is the `.terraform.lock.hcl`, which is the [Dependency Lo
 - Create graph of resources and its dependencies:
     ```bash
     terraform graph
+    # Copy the output to "http://webgraphviz.com"
     ```
 
 - Enumerates all outputs from the root module:
