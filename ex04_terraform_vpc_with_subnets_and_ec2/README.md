@@ -13,21 +13,24 @@
 8. Assigning an Elastic IP to the Network Interface created in step number 7.
 9. Creating an Ubuntu server and installing apache2.
 
-## Before running example...
+## Before running this example...
 
-Remember to add the credentials to the environment variables via an IAM with
-an associated key-pair (in this case added to Windows Powershell):
+Remember to add the credentials to the environment variables via an IAM role or user and the specific AWS configuration variables.
+
+In powershell we can run:
 
 ```bash
 $env:AWS_ACCESS_KEY_ID="<KEY1>"
-```
-
-```bash
 $env:AWS_SECRET_ACCESS_KEY="<KEY2>"
+$env:AWS_ACCOUNT_ID="<ID>"
 ```
 
+In Linux we can execute:
+
 ```bash
-$env:AWS_ACCOUNT_ID="<ID>"
+export AWS_ACCESS_KEY_ID="<KEY1>"
+export AWS_SECRET_ACCESS_KEY="<KEY2>"
+export AWS_ACCOUNT_ID="<ID>"
 ```
 
 <br>

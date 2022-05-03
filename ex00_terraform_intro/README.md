@@ -25,9 +25,9 @@ $env:AWS_ACCOUNT_ID="<ID>"
 In Linux we can execute:
 
 ```bash
-AWS_ACCESS_KEY_ID="<KEY1>"
-AWS_SECRET_ACCESS_KEY="<KEY2>"
-AWS_ACCOUNT_ID="<ID>"
+export AWS_ACCESS_KEY_ID="<KEY1>"
+export AWS_SECRET_ACCESS_KEY="<KEY2>"
+export AWS_ACCOUNT_ID="<ID>"
 ```
 
 <br>
