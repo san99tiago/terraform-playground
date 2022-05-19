@@ -1,0 +1,46 @@
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_user.example[0] will be created
+  + resource "aws_iam_user" "example" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "santi"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user.example[1] will be created
+  + resource "aws_iam_user" "example" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "moni"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user.example[2] will be created
+  + resource "aws_iam_user" "example" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "elkin"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + print_the_names = [
+      + "The specific user_name key is: user1 its value is santi",
+      + "The specific user_name key is: user2 its value is moni",
+      + "The specific user_name key is: user3 its value is elkin",
+    ]
