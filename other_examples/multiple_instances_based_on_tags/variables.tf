@@ -13,8 +13,13 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "enable_instances" {
+  type        = bool
+  description = "Set it to true to deploy instances, false to disable instance deploy"
+  default     = false
+}
+
 variable "list_of_tags" {
   type        = list(map(string))
   description = "list_of_tags for the EC2 instance"
 }
-

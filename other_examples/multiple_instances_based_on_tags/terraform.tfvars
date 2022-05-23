@@ -1,5 +1,6 @@
-ami_id        = "ami-0022f774911c1d690"
-instance_type = "t2.micro"
+ami_id           = "ami-0022f774911c1d690"
+instance_type    = "t2.micro"
+enable_instances = true
 list_of_tags = [
   {
     "Environment" : "dev",
