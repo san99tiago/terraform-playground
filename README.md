@@ -1,13 +1,14 @@
-# TERRAFORM-PLAYGROUND
+# :hammer: TERRAFORM-PLAYGROUND :hammer:
 
 Learning Terraform with AWS examples.
 
-This repository covers a simple-learning approach for Terraform and Packer with AWS. <br>
+This repository covers a simple-learning approach for Terraform (90%) and Packer (10%) with AWS. <br>
+
 We will cover important Infrastructure as Code (IaC) concepts that support the best DevOps practices. <br>
 
 <img src="assets/img/terraform_gif.gif" width=30%> <br>
 
-## General Overview of this Repository
+## General Overview of this Repository :swimmer:
 
 This repository is my own learning-playground for Terraform-based projects. It has different examples and the overall idea is to have fun with Infrastructure as Code projects towards AWS. <br>
 
@@ -28,7 +29,7 @@ My advice is to primary understand the way Terraform works with basic tutorials,
 - [Packer](https://www.packer.io) <br>
   Packer allows us to create identical machine images for multiple platforms from a single source configuration. We will use it to create AWS AMIs to launch custom EC2 images. <br>
 
-## Important Terraform Remarks
+## Important Terraform Remarks :headphones:
 
 Some important notes to keep in mind for the usage of Terraform are:
 
@@ -174,7 +175,7 @@ Another important file is the `.terraform.lock.hcl`, which is the [Dependency Lo
   terraform state rm
   ```
 
-## Important Packer Remarks
+## Important Packer Remarks :headphones:
 
 Some important notes to keep in mind for the usage of Packer are:
 
