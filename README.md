@@ -1,4 +1,5 @@
 # TERRAFORM-PLAYGROUND
+
 Learning Terraform with AWS examples.
 
 This repository covers a simple-learning approach for Terraform and Packer with AWS. <br>
@@ -12,25 +13,24 @@ This repository is my own learning-playground for Terraform-based projects. It h
 
 The examples are simple, but they are a good way to learn terraform from "scratch". <br>
 
-
 ## Dependencies :vertical_traffic_light:
 
 My advice is to primary understand the way Terraform works with basic tutorials, and then try to develop amazing project ideas based on these examples. <br>
 
 ### Software dependencies (based on project)
-* [Visual Studio Code](https://code.visualstudio.com/) <br>
-Visual Studio Code is my main code editor for high-level programming. This is not absolutely necessary, but from my experience, it gives us a great performance and we can link it with Git and GitHub easily. <br>
 
-* [Terraform](https://www.terraform.io) <br>
-Terraform is a way to codify, automate, provision and version cloud APIs into declarative configuration files. The main purpose of Terraform is to create IaC for provisioning amazing infrastructure to different clouds. <br>
+- [Visual Studio Code](https://code.visualstudio.com/) <br>
+  Visual Studio Code is my main code editor for high-level programming. This is not absolutely necessary, but from my experience, it gives us a great performance and we can link it with Git and GitHub easily. <br>
 
-* [Packer](https://www.packer.io) <br>
-Packer allows us to create identical machine images for multiple platforms from a single source configuration. We will use it to create AWS AMIs to launch custom EC2 images. <br>
+- [Terraform](https://www.terraform.io) <br>
+  Terraform is a way to codify, automate, provision and version cloud APIs into declarative configuration files. The main purpose of Terraform is to create IaC for provisioning amazing infrastructure to different clouds. <br>
+
+- [Packer](https://www.packer.io) <br>
+  Packer allows us to create identical machine images for multiple platforms from a single source configuration. We will use it to create AWS AMIs to launch custom EC2 images. <br>
 
 ## Important Terraform Remarks
 
 Some important notes to keep in mind for the usage of Terraform are:
-
 
 ### Install Terraform Bin/Exe
 
@@ -50,111 +50,129 @@ Another important file is the `.terraform.lock.hcl`, which is the [Dependency Lo
 
 ### Terraform Commands
 
-- Initialize Terraform directory and downloads providers: 
-    ```bash
-    terraform init
-    ```
+- Initialize Terraform directory and downloads providers:
 
-- Initialize Terraform directory and do not download providers: 
-    ```bash
-    terraform init --get-plugins=false
-    ```
+  ```bash
+  terraform init
+  ```
+
+- Initialize Terraform directory and do not download providers:
+
+  ```bash
+  terraform init --get-plugins=false
+  ```
 
 - Download and update root modules:
-    ```bash
-    terraform get
-    ```
+
+  ```bash
+  terraform get
+  ```
 
 - Create an execution plan:
-    ```bash
-    terraform plan
-    ```
+
+  ```bash
+  terraform plan
+  ```
 
 - Create an execution plan only for a targeted resource:
-    ```bash
-    terraform plan -target="random_cool_resource.random_cool_resource_name"
-    ```
+
+  ```bash
+  terraform plan -target="random_cool_resource.random_cool_resource_name"
+  ```
 
 - Create a destroy plan:
-    ```bash
-    terraform plan -destroy
-    ```
+
+  ```bash
+  terraform plan -destroy
+  ```
 
 - Execute (apply) changes in the real environment:
-    ```bash
-    terraform apply
-    ```
+
+  ```bash
+  terraform apply
+  ```
 
 - Execute (apply) changes in the real environment with specific variable file:
-    ```bash
-    terraform apply --var-file dev.tfvars.json
-    ```
+
+  ```bash
+  terraform apply --var-file dev.tfvars.json
+  ```
 
 - Execute (apply) changes only for a targeted resource:
-    ```bash
-    terraform apply -target="random_cool_resource.random_cool_resource_name"
-    ```
+
+  ```bash
+  terraform apply -target="random_cool_resource.random_cool_resource_name"
+  ```
 
 - Destroy all resources:
-    ```bash
-    terraform destroy
-    ```
+
+  ```bash
+  terraform destroy
+  ```
 
 - Destroy only a targeted resource:
-    ```bash
-    terraform destroy -target="random_cool_resource.random_cool_resource_name"
-    ```
+
+  ```bash
+  terraform destroy -target="random_cool_resource.random_cool_resource_name"
+  ```
 
 - Refresh the state of Terraform state file with real environment:
-    ```bash
-    terraform refresh
-    ```
+
+  ```bash
+  terraform refresh
+  ```
 
 - Terraform workspace commands:
-    ```bash
-    terraform workspace new
-    terraform workspace select
-    terraform workspace list
-    terraform workspace show
-    terraform workspace delete
-    ```
+
+  ```bash
+  terraform workspace new
+  terraform workspace select
+  terraform workspace list
+  terraform workspace show
+  terraform workspace delete
+  ```
 
 - Format Terraform files into HCL canonical structure:
-    ```bash
-    terraform fmt
-    ```
+
+  ```bash
+  terraform fmt
+  ```
 
 - Validate Terraform files:
-    ```bash
-    terraform validate
-    ```
+
+  ```bash
+  terraform validate
+  ```
 
 - Create graph of resources and its dependencies:
-    ```bash
-    terraform graph
-    # Copy the output to "http://webgraphviz.com"
-    ```
+
+  ```bash
+  terraform graph
+  # Copy the output to "http://webgraphviz.com"
+  ```
 
 - Enumerates all outputs from the root module:
-    ```bash
-    terraform output
-    ```
+
+  ```bash
+  terraform output
+  ```
 
 - Enumerates an specific output from the root module:
-    ```bash
-    terraform output <specific_output>
-    ```
+
+  ```bash
+  terraform output <specific_output>
+  ```
 
 - Terraform state commands:
-    ```bash
-    terraform state list
-    terraform state list aws_instance.my_cool_ec2
-    terraform state show aws_instance.my_cool_ec2
-    terraform state pull
-    terraform state push
-    terraform state mv
-    terraform state rm
-    ```
+  ```bash
+  terraform state list
+  terraform state list aws_instance.my_cool_ec2
+  terraform state show aws_instance.my_cool_ec2
+  terraform state pull
+  terraform state push
+  terraform state mv
+  terraform state rm
+  ```
 
 ## Important Packer Remarks
 
@@ -171,25 +189,36 @@ When the AMI process is being executed, it usually creates an EC2 instance calle
 ### Packer Commands
 
 - Validate a JSON file that creates an AMI:
-    ```bash
-    packer validate cool-ubuntu-aws-ami.json
-    ```
+
+  ```bash
+  packer validate cool-ubuntu-aws-ami.json
+  ```
 
 - Build the AMI with Packer and a JSON file:
-    ```bash
-    packer build cool-ubuntu-aws-ami.json
-    ```
-
+  ```bash
+  packer build cool-ubuntu-aws-ami.json
+  ```
 
 ## Usage :dizzy:
+
 All projects are really well commented and most of them have specifications and remarks for their purpose and I/O. <br>
 I will be uploading most of the files, and try to keep it as clean as possible. <br>
 
-
 ## Special thanks :gift:
-* Thanks to all contributors of the great OpenSource projects that I am using. <br>
 
+- Thanks to all contributors of the great OpenSource projects that I am using. <br>
 
 ## Author :musical_keyboard:
+
 ### Santiago Garcia Arango
-<img src="assets/img/santi_terraform.jpg" width=30%> <br>
+
+<table border="1">
+    <tr>
+        <td>
+            <p align="center">Senior DevOps Engineer passionate about advanced cloud-based solutions and deployments in AWS. I am convinced that today's greatest challenges must be solved by people that love what they do.</p>
+        </td>
+        <td>
+            <p align="center"><img src="assets/img/santi_terraform.jpg" width=60%></p>
+        </td>
+    </tr>
+</table>
